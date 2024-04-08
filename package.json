@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "live-server"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  },
+  "name": "ui-components",
+  "version": "1.0.0",
+  "main": "draft.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

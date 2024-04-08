@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --black: #020202ff;
+  --white: #fff;
+  --green-1: #0d2818ff;
+  --green-2: #04471cff;
+  --green-3: #058c42ff;
+  --malachite: #16db65ff;
+}
+
+@keyframes swipe-in {
+  0% {
+    transform: translate3d(5px, 5px, 0);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  font-size: 16px;
+  background: no-repeat center url('https://images.unsplash.com/photo-1687463221020-b8769b32c622?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: 0;
+}
+
+/* Usuń ten selektor jeśli chcesz, aby navigacja pokryła całą stronę lub była innego rozmiaru */
+#example {
+  max-width: 250px;
+  margin: 50px auto;
+}
+
+.nav {
+  display: flex;
+  background: var(--black);
+  color: var(--white);
+  box-shadow: 2px 0px 15px #2c0a5c;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 500px;
+}
+
+.nav-bar{
+    display: flex;
+   flex-direction: column;
+    position: relative;
+  }
+  
+  .nav-bar-track {
+      transition: all .25s;
+      content: '';
+      display: block;
+      position: absolute;
+      border-right: 2px solid var(--malachite);
+    width: 100%;
+      width: 2px;
+      bottom: 0;
+      pointer-events: none;
+    }
+
+.nav-btn {
+    flex: 50px 1 auto;
+    padding: 20px 25px;
+    color: var(--white);
+    font-weight: bold;
+    transition: color .25s;
+    cursor: pointer;
+    transition: transform .25s;
+  }
+
+.nav-btn > svg {
+    width: 24px;
+    height: 24px;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+.nav-btn:hover {
+  transform: scale(.9);
+}
+
+.nav-btn.active,
+ .nav-btn:hover,
+.nav-btn:focus {
+      color: var(--malachite);
+   }
+
+.content {
+  padding: 16px;
+}
+
+.content-inner:not(.active) {
+    display: none;
+}
+
+.content-inner.active {
+  animation: swipe-in .25s;
+}
+
