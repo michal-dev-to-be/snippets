@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --black: #020202ff;
+  --white: #fff;
+  --primary: #4e37b1;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  font-size: 16px;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+
+.container {
+  max-width: 80vw;
+  margin: 100px auto;
+}
+
+:root {
+  --black: #020202ff;
+  --white: #fff;
+  --primary: #4e37b1;
+}
+
+.toggle-field {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.toggle-field .label {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.toggle-field [type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+}
+
+.toggle-field [type='checkbox']:checked ~ .field::before {
+  transform: translateX(36px);
+  background: #fff;
+}
+
+.toggle-field .field {
+  position: relative;
+  cursor: pointer;
+  box-shadow: 1px 1px 8px #2c0a5c;
+  border-radius: 20px;
+  width: 80px;
+  height: 40px;
+  background: #fff;
+  transition: background-color 0.3s;
+}
+
+.toggle-field .field:hover,
+.toggle-field [type='checkbox']:focus ~ .field {
+  opacity: 0.9;
+}
+
+.toggle-field [type='checkbox']:focus ~ .field {
+  box-shadow: 0px 0px 8px 2px #2c0a5c;
+}
+
+.toggle-field [type='checkbox']:checked ~ .field {
+  background: #4e37b1;
+}
+
+.toggle-field .field::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  margin: 0 6px;
+  transition: transform 0.3s;
+  display: block;
+  height: 32px;
+  width: 32px;
+  border-radius: 18px;
+  background: #4e37b1;
+}
