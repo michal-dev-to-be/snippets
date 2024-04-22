@@ -7,25 +7,31 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
     />
-    <style>
-      .card {
-        height: 400px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/9955e0705d.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="card">
+    <main class="is-flex is-justify-content-center is-align-items-center  is-fullheight">
+      <div class="card">
       <div class="card-content">
         <div class="content">
-            <ul></ul>
+            <ul>
+                   <li id="initial-ai-message" class="is-flex is-align-items-center chat-message">
+                <figure class="avatar image is-48x48">
+                  <img class="is-rounded has-background-white p-1" src="https://icons.iconarchive.com/icons/iconarchive/robot-avatar/256/Blue-2-Robot-Avatar-icon.png"/>
+                </figure>
+                <p class="has-text-white ml-4">Hi, I'm here to help you.<br> Ask me anything!</p>
+      </li>
+            </ul>
         </div>
-        <div class="is-flex">
-            <input class="input" placeholder="Ask me anything?"></input>
-            <button class="button is-primary">Send</button>
-        </div>
+        <div id="loader" class="loader is-large is-hidden"></div>
+        <form id="ai-chat-form" class="is-flex mt-auto">
+            <input class="input is-rounded has-background-white has-text-black" placeholder="Ask me anything?"></input>
+            <button class="button is-primary is-rounded ml-2"><i class="fa-solid fa-paper-plane has-text-white"></i></button>
+        </form>
       </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="script.js" />
+    </main>
   </body>
 </html>

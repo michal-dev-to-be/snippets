@@ -1,0 +1,76 @@
+:root {
+  --white: #fff;
+  --grey: #999;
+}
+
+body {
+  background: no-repeat center
+    url('https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+main {
+  height: 100vh;
+}
+
+.content ul {
+  padding: 0;
+  margin: 0;
+}
+
+.chat-message {
+  animation: fade-in 0.5s, scale 0.5s;
+}
+
+.input::placeholder {
+  color: var(--grey);
+  font-size: 14px;
+}
+
+.card {
+  width: 260px;
+  box-shadow: 0 0 30px rgba(65, 65, 63, 1);
+  background: rgb(65, 65, 63);
+  background: linear-gradient(
+    135deg,
+    rgba(65, 65, 63, 1) 0%,
+    rgba(87, 125, 138, 1) 51%,
+    rgba(30, 31, 31, 1) 100%
+  );
+  animation: fade-in 1.5s, scale 1s;
+}
+
+.content {
+  margin: 0;
+  overflow: auto;
+}
+
+.card-content {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+}
+
+.chat-message {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0;
+}
+
+.card {
+  margin-top: 50px;
+  height: 400px;
+  max-width: 400px;
+}
+
+.avatar {
+  flex: 0 0 auto;
+}
+
+.loader {
+  margin: 0 auto 10px auto;
+  width: 32px;
+  height: 32px;
+  border-top-color: var(--white);
+  border-left-color: var(--white);
+  border-bottom-color: var(--white);
+}

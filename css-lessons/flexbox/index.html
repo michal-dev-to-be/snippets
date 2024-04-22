@@ -1,0 +1,71 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin-top: 70px;
+        margin: 70px 50px 0 50px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #fff;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .flex {
+        padding-top: 50px;
+        animation: fadeIn 0.5s;
+        transition: all 0.5s;
+      }
+
+      .flex-item {
+        justify-content: center;
+        align-items: center;
+        background: orange;
+        color: #fff;
+        /* border: 1px solid purple; */
+        font-size: 48px;
+        border-radius: 10px;
+        animation: fadeIn 1s;
+        transition: all 0.5s;
+        min-height: 100px;
+      }
+
+      .flex-item::before {
+        top: 20px;
+
+        content: attr(data-title);
+        position: relative;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="flex">
+      <div data-title="1" class="flex-item"></div>
+      <div data-title="2" class="flex-item"></div>
+      <div data-title="3" class="flex-item"></div>
+      <div data-title="4" class="flex-item"></div>
+    </div>
+
+    <script src="https://unpkg.com/animate-css-grid@latest"></script>
+    <script>
+      const grid = document.querySelector('.grid');
+      window.animateCSSGrid.wrapGrid(grid, { duration: 600 });
+    </script>
+  </body>
+</html>
