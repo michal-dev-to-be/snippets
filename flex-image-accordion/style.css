@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(65, 65, 63);
+  background: url('https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')
+    no-repeat center / cover;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.gallery {
+  display: flex;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  flex: 1;
+  height: 400px;
+  box-shadow: 0 0 3px #333;
+  transition: flex-grow 0.8s;
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  background-size: cover;
+  transition: transform 0.8s;
+}
+
+.gallery-item.iceland::before {
+  background-image: url('https://images.unsplash.com/photo-1504829857797-ddff29c27927?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.gallery-item.indonesia::before {
+  background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.gallery-item.italy::before {
+  background-image: url('https://images.unsplash.com/photo-1515859005217-8a1f08870f59?q=80&w=3210&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.gallery-item.australia::before {
+  background-image: url('https://images.unsplash.com/photo-1494233892892-84542a694e72?q=80&w=2242&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.gallery-item:hover {
+  flex: 3;
+  box-shadow: 0 0 10px #333;
+}
+
+.gallery-item:hover::before {
+  transform: scale(1.2);
+}
+
+.gallery-item:hover > h2 {
+  left: 32px;
+}
+
+.gallery-item > h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  transition: left 0.8s ease;
+}
